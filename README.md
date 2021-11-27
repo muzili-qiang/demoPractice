@@ -1,10 +1,9 @@
-[toc]
 
 ___
 
 # 微信公众号--前端程序猿Pro 推文中实例源码仓库
 
-## preface
+## Preface
 
   持续更新一些前端技能点源码，更多前沿技术以及好玩的技能点可以关注微信公众号：前端程序猿Pro
 
@@ -28,9 +27,9 @@ ___
 
   * 效果图如下：
 
-  ![机械时钟](./assets/time/sz.gif)
+  ![机械时钟](https://mmbiz.qpic.cn/mmbiz_png/0bSpRD6bHvUfCjjjpKMFwqsKcqQfibe6KPkmDzO4oegXfpwHma8eLic9AtcXias5rFBoepXSQAnmR1ZSXVruoSduQ/0?wx_fmt=png)
 
-  代码详解:  [巧用 -webkit-box-reflect 实现光影按钮](https://mp.weixin.qq.com/s?__biz=MzkzMTMwNDIyMg==&amp;mid=2247483926&amp;idx=1&amp;sn=1c313ce6ca1a4ddaab778f9e947a5e2c&amp;chksm=c26c4467f51bcd71bc7f72ae2e2c33c8d104c72833909dde6c150beadc4f72e2be6c3f97bd10&token=1567114989&lang=zh_CN#rd)
+  代码详解:  [旋转的机械时钟](https://mp.weixin.qq.com/s?__biz=MzkzMTMwNDIyMg==&amp;mid=2247483926&amp;idx=1&amp;sn=1c313ce6ca1a4ddaab778f9e947a5e2c&amp;chksm=c26c4467f51bcd71bc7f72ae2e2c33c8d104c72833909dde6c150beadc4f72e2be6c3f97bd10&token=1567114989&lang=zh_CN#rd)
 
 
 
@@ -49,18 +48,10 @@ ___
 
   微信公众号：
 
-  ![前端程序猿Pro](./assets/userInfo/qcode.jpg)
+  ![前端程序猿Pro](https://mmbiz.qpic.cn/mmbiz_jpg/0bSpRD6bHvXSRArBgPkDsfrynrKRoiaIFQ9Siaic75oP0BSDTicQ0ALe8llDWMiaG51EGALPaILKqL2MSKBeyU86S4w/0?wx_fmt=jpeg)
 
   不止于前端，来聊聊前端的点点滴滴~
 
-  CSDN:
+  CSDN——前端程序猿Pro](https://blog.csdn.net/muzili1006?spm=1001.2101.3001.5343)
 
-  [CSDN](https://blog.csdn.net/muzili1006?spm=1001.2101.3001.5343)
-
-  掘金社区帐号:
-
-  [掘金](https://juejin.cn/user/2392129702472221/posts)
-
-  Wechat 注明来意
-
-  ![前端程序猿Pro](./assets/userInfo/Wechat.jpg)
+  [掘金社区-前端程序猿Pro](https://juejin.cn/user/2392129702472221/posts)
