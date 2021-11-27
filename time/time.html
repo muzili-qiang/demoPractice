@@ -1,0 +1,123 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>旋转的时钟</title>
+    <style>
+        *{
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+        body{
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            min-height: 100vh;
+            background: #98889c;
+        }
+        .clock{
+            width: 360px;
+            height: 360px;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            background: url("../assets/time/time_bg.jpg");
+            background-size: cover;
+            border-radius: 50%;
+            box-shadow: 0 -15px 15px rgba(255, 255, 255, 0.05),
+            inset 0 -15px 15px rgba(255, 255, 255, 0.05),
+            0 15px 15px rgba(0, 0, 0, 0.3),
+            inset 0 15px 15px rgba(0, 0, 0, 0.3);
+        }
+        .clock:before{
+            content: "";
+            position: absolute;
+            width: 15px;
+            height: 15px;
+            background: #fff;
+            border-radius: 50%;
+            z-index: 10;
+        }
+        .clock .hour,
+        .clock .min,
+        .clock .second{
+            position: absolute;
+        }
+        .clock .hour, .hr{
+            width: 165px;
+            height: 165px;
+        }
+        .clock .min, .mn{
+            width: 195px;
+            height: 195px;
+        }
+        .clock .second, .sc{
+            width: 235px;
+            height: 235px;
+        }
+        .hr, .mn, .sc{
+            display: flex;
+            justify-content: center;
+            border-radius: 50%;
+        }
+        .hr:before{
+            content: "";
+            position: absolute;
+            width: 8px;
+            height: 80px;
+            background: #ff105e;
+            z-index: 1;
+            border-radius: 6px 6px 0 0;
+        }
+        .mn:before{
+            content: "";
+            position: absolute;
+            width: 4px;
+            height: 90px;
+            background: #fff;
+            z-index: 2;
+            border-radius: 6px 6px 0 0;
+        }
+        .sc:before{
+            content: "";
+            position: absolute;
+            width: 2px;
+            height: 150px;
+            background: rgb(211, 238, 180);
+            z-index: 3;
+            border-radius: 6px 6px 0 0;
+        }
+    </style>
+</head>
+<body>
+    <div class="clock">
+        <div class="hour">
+            <div class="hr" id="hour"></div>
+        </div>
+        <div class="min">
+            <div class="mn" id="min"></div>
+        </div>
+        <div class="second">
+            <div class="sc" id="second"></div>
+        </div>
+    </div>
+    <script>
+        const hr = document.querySelector('#hour');
+        const mn = document.querySelector('#min');
+        const sc = document.querySelector('#second');
+        setInterval(()=>{
+            let day = new Date();
+            //360度 一个小时转30度   一(分钟/秒)转6度
+            let hh = day.getHours() * 30;
+            let mm = day.getMinutes() * 6;
+            let ss = day.getSeconds() * 6;
+            hr.style.transform = `rotateZ(${(hh)+(mm/12)}deg)`;
+            mn.style.transform = `rotateZ(${mm}deg)`;
+            sc.style.transform = `rotateZ(${ss}deg)`;
+        })
+    </script>
+</body>
+</html>
