@@ -29,7 +29,7 @@ ___
 
   * 效果图如下：
 
-  ![机械时钟](https://mmbiz.qpic.cn/mmbiz_png/0bSpRD6bHvUfCjjjpKMFwqsKcqQfibe6KPkmDzO4oegXfpwHma8eLic9AtcXias5rFBoepXSQAnmR1ZSXVruoSduQ/0?wx_fmt=png)
+  ![机械时钟](https://mmbiz.qpic.cn/mmbiz_gif/0bSpRD6bHvVwLysEwYLmko0wlwl9ANvqzOzHszT1r8myXsJNEmbmartXph13SK4Q0lWh9Ik1iclWJQ1iaLhDZnJg/0?wx_fmt=gif)
 
   代码详解:  [旋转的机械时钟](https://mp.weixin.qq.com/s?__biz=MzkzMTMwNDIyMg==&amp;mid=2247483926&amp;idx=1&amp;sn=1c313ce6ca1a4ddaab778f9e947a5e2c&amp;chksm=c26c4467f51bcd71bc7f72ae2e2c33c8d104c72833909dde6c150beadc4f72e2be6c3f97bd10&token=1567114989&lang=zh_CN#rd)
 
