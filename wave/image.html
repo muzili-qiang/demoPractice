@@ -1,0 +1,91 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>图片翻转</title>
+</head>
+<style>
+    body {
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        height: 100vh;
+        background: black;
+    }
+
+    .scene {
+        width: 400px;
+        display: flex;
+        justify-content: space-between;
+        perspective: 400px;
+    }
+    .card {
+        position: relative;
+        width: 120px;
+        height: 150px;
+        color: white;
+        cursor: pointer;
+        transition: 1s ease-in-out;
+        transform-style: preserve-3d;  
+        /* 
+            preserve-3d表示所有子元素在3D空间中呈现
+            flat表示所有子元素在2D平面呈现
+        */
+    }
+    .card:hover {
+      transform: rotateY(0.5turn);  /* 1turn = 360deg */
+    }
+    .card__face {
+      position: absolute;
+      top: 0;
+      left: 0;
+      width: 100%;
+      height: 100%;
+      backface-visibility: hidden; /* 隐藏被旋转的 div 元素的背面： */
+      transition: 1s ease-in-out;
+      -webkit-box-reflect: below 0
+        linear-gradient(transparent, transparent, rgba(0, 0, 0, 0.4)); /* 倒影 */
+    }
+    .card__face img {
+        width: 120px;
+        height: 150px;
+        object-fit: cover;
+    }
+
+      .card__face --back {
+        transform: rotateY(0.5turn);
+      }
+
+</style>
+<body>
+    <div class="scene">
+        <div class="card">
+          <div class="card__face card__face--front">
+            <img src="../assets/wave/2.jpg" />
+          </div>
+          <div class="card__face card__face--back">
+            <img src="../assets/wave/2.jpg" />
+          </div>
+        </div> 
+        <div class="card">
+          <div class="card__face card__face--front">
+            <img src="../assets/wave/4.jpg" />
+          </div>
+          <div class="card__face card__face--back">
+            <img src="../assets/wave/4.jpg" />
+          </div>
+        </div>
+        <div class="card">
+          <div class="card__face card__face--front">
+            <img src="../assets/wave/3.jpg" />
+          </div>
+          <div class="card__face card__face--back">
+            <img src="../assets/wave/3.jpg" />
+          </div>
+        </div>
+      </div>
+    
+</body>
+</html>

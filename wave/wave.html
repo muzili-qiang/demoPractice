@@ -1,0 +1,49 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>水波文字</title>
+</head>
+<style>
+body {
+  display: flex;
+  height: 100vh;
+  justify-content: center;
+  align-items: center;
+  overflow: hidden;
+}
+
+video,
+h1 {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  margin: 0;
+}
+
+video {
+  object-fit: cover; /*对图片进行剪切，保留原始比例：cover保持原有尺寸比例。但部分内容可能被剪切。*/
+}
+
+h1 {
+  font-size: 16vw;
+  font-weight: 700;
+  line-height: 100vh;
+  text-transform: uppercase;
+  text-align: center;
+  background: white;
+  mix-blend-mode: screen;
+}
+
+</style>
+<body>
+    <video autoplay muted loop preload poster="">
+        <source src="../assets/wave/wave.mp4" />
+      </video>
+      <h1>前端程序猿</h1>
+</body>
+</html>
