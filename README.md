@@ -15,10 +15,6 @@ ___
 
   At present, I work in a company in Shanghai. In my spare time, I like to understand new things, write things, and summarize some interesting codes.
 
-  大家好，我是城南旧客，本人前端开发一枚，计算机科学与技术专业，从事前端开发几年时间，做过微信、字节、快手、小程序，公司管理后台，web/移动端开发；
-  
-  目前就职于上海一家公司，在业余时间，喜欢了解新鲜事物，写写东西，总结一些好玩有趣的代码。
-
   微信公众号：
 
   ![前端程序猿Pro](https://mmbiz.qpic.cn/mmbiz_jpg/0bSpRD6bHvXSRArBgPkDsfrynrKRoiaIFQ9Siaic75oP0BSDTicQ0ALe8llDWMiaG51EGALPaILKqL2MSKBeyU86S4w/0?wx_fmt=jpeg)
