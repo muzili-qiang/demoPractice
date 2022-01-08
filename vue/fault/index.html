@@ -1,0 +1,108 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>故障动画</title>
+
+  <script src="https://cdn.jsdelivr.net/npm/vue@2.6.14"></script>
+
+</head>
+<style>
+  @import url(demo3.css);
+  /* .sub-title{
+    width: 387px;
+    height: 75px;
+    position: absolute;
+    top: 4px;
+    left: 50%;
+    z-index: 20;
+    transform: translateX(-50%);
+    background: url(https://ttmini.yizhiwechat.com/yzAiList/loveConstitution/index-subtitle.png) no-repeat left top/100%;
+  } */
+  .glitch__img.stop{
+      animation: none!important;
+    }
+    .sub_img{
+    position: absolute;
+    top: 16px;
+    left: 72px;
+    height: 40px;
+    width: 241px;
+    opacity: 0;
+    animation: tips-show 0.8s linear -1.6s forwards;
+  }
+  @keyframes tips-show {
+  0%{
+    opacity: 0;
+  }
+  100%{
+    opacity: 1;
+  }
+}
+</style>
+<body>
+  <div id="fault" >
+    <div class="sub-title glitch glitch--style-1">
+      <div v-if="glitches.gapBlends && !glitches.stop">
+        <div
+          class="glitch__img"
+          v-for="i in glitches.gapBlends"
+          :key="i"
+          :style="{
+              background:`url(${glitches.url}) no-repeat 50% 0 / cover`
+          }"
+          ></div>
+      </div>
+    </div>
+  </div>
+  
+  <script>
+    var comName=new Vue({
+      el: '#fault',
+      data: {
+        glitches: {},
+        endshow:false,
+      },
+      created() {
+        this.firstgetglitches()
+      },
+      methods: {
+        firstgetglitches(){
+          this.glitches = {
+            url:'./images/4.jpg',
+            gapBlends:[...new Array(5).keys()],
+            stop:false
+          };
+          this.imgChange(2)
+        },
+        imgChange(index) {
+          setTimeout(() => {
+            this.glitches.url = `./images/5.jpg`;
+            setTimeout(() => {
+              this.glitches.stop = true;
+              setTimeout(() => {
+                index >= 3 ? index = 1 : ++index
+                this.glitches.stop = false
+                this.imgChange(index)
+              },3000)
+            },1300)
+          },2400);
+        },
+        getglitches(){
+          setTimeout(() => {
+            this.glitches.url = './images/5.jpg';
+            this.glitches.stop = false
+            setTimeout(() => {
+              this.glitches.stop = true
+              this.firstgetglitches()
+            },1000)
+          },3000)
+        },
+      }
+    })
+</script>
+  
+</body>
+</html>

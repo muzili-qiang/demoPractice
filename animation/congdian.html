@@ -1,0 +1,324 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <!-- <meta name="viewport" content="width=device-width, initial-scale=1.0"> -->
+  <!--强制浏览器以竖屏的布局来显示页面，缩放比例为1，最小缩放值为1，最大缩放值为1，用户缩放设置为不允许-->
+  <meta name="viewport" content="width=device-width,initial-scale=1,minimum-scale=1,maximum-scale=1,user-scalable=no" />、
+  <title>手机息屏充电</title>
+</head>
+<body>
+  <div class="box">
+    <h5 id="week"></h5>
+    <div class="g-container">
+      <div class="g-number" id="num"> </div>
+      <div class="g-contrast">
+          <div class="g-circle"></div>
+          <ul class="g-bubbles" id="myul">
+          </ul>
+      </div>
+    </div>
+  </div>
+</body>
+<script>
+  function getTime() {
+    var myDate = new Date();
+    document.getElementById('week').innerHTML = myDate.toLocaleString()
+  }
+  getTime()
+  function percentage() {
+    var per = 0
+    var setInt = setInterval(function() {
+      per++
+      if ( per >= 100 ) {
+        clearInterval(setInt)
+        // document.getElementById("myul").style.animationPlayState = "paused";
+        // document.getElementById("myul").style.WebkitAnimationPlayState = "paused"; // 针对 Chrome 和 Safari 的代码
+      } 
+      document.getElementById("num").innerHTML = per + '%';
+    }, 1000)
+  }
+  percentage()
+
+  function createLi() {
+    for (var i = 0; i < 15; i++) {
+      var li = document.createElement('li')
+      document.getElementById('myul').appendChild(li)
+    }
+  }
+  createLi()
+
+</script>
+<style>
+  html,
+  body {
+    width: 100%;
+    height: 100%;
+    background: url(../assets/animation/restScreenbg.jpg) no-repeat;
+    background-size: cover;
+    overflow: hidden;
+  }
+  .box{
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+  }
+
+  #week {
+    width: 200px;
+    color: #fff;
+    font-size: 32px;
+    text-align: center;
+  }
+
+  .g-number {
+    position: absolute;
+    width: 300px;
+    top: 27%;
+    text-align: center;
+    font-size: 32px;
+    z-index: 10;
+    color: #fff;
+  }
+
+  .g-container {
+    position: relative;
+    width: 300px;
+    height: 400px;
+    margin: 92px auto;
+  }
+
+  .g-contrast {
+    filter: contrast(10) hue-rotate(0);
+    width: 300px;
+    height: 400px;
+    /* background-color: #000; */
+    overflow: hidden;
+    animation: hueRotate 10s infinite linear;
+  }
+
+  .g-circle {
+    position: relative;
+    width: 300px;
+    height: 300px;
+    box-sizing: border-box;
+    filter: blur(8px);
+  }
+
+  .g-circle::after {
+    content: "";
+    position: absolute;
+    top: 40%;
+    left: 50%;
+    transform: translate(-50%, -50%) rotate(0);
+    width: 200px;
+    height: 200px;
+    background-color: #00ff6f;
+    border-radius: 42% 38% 62% 49% / 45%;
+    animation: rotate 10s infinite linear;
+  }
+
+  .g-circle::before {
+    content: "";
+    position: absolute;
+    width: 176px;
+    height: 176px;
+    top: 40%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    border-radius: 50%;
+    /* background-color: transparent; */
+    background-color: rgba(0, 0, 0, 0.6);
+    z-index: 10;
+  }
+
+  .g-bubbles {
+    position: absolute;
+    left: 50%;
+    bottom: 0;
+    width: 100px;
+    height: 40px;
+    transform: translate(-50%, 0);
+    border-radius: 100px 100px 0 0;
+    background-color: #00ff6f;
+    filter: blur(5px);
+  }
+
+  li {
+    position: absolute;
+    border-radius: 50%;
+    background: #00ff6f;
+  }
+
+  li:nth-child(0) {
+    left: 76px;
+    top: 50%;
+    transform: translate(-50%, -50%);
+    width: 21px;
+    height: 21px;
+    animation: moveToTop 9s ease-in-out -0.133s infinite;
+  }
+
+  li:nth-child(1) {
+    left: 68px;
+    top: 50%;
+    transform: translate(-50%, -50%);
+    width: 30px;
+    height: 30px;
+    animation: moveToTop 8s ease-in-out -3.981s infinite;
+  }
+
+  li:nth-child(2) {
+    left: 80px;
+    top: 50%;
+    transform: translate(-50%, -50%);
+    width: 27px;
+    height: 27px;
+    animation: moveToTop 5s ease-in-out -4.231s infinite;
+  }
+
+  li:nth-child(3) {
+    left: 54px;
+    top: 50%;
+    transform: translate(-50%, -50%);
+    width: 18px;
+    height: 18px;
+    animation: moveToTop 8s ease-in-out -0.985s infinite;
+  }
+
+  li:nth-child(4) {
+    left: 24px;
+    top: 50%;
+    transform: translate(-50%, -50%);
+    width: 18px;
+    height: 18px;
+    animation: moveToTop 8s ease-in-out -3.172s infinite;
+  }
+
+  li:nth-child(5) {
+    left: 52px;
+    top: 50%;
+    transform: translate(-50%, -50%);
+    width: 30px;
+    height: 30px;
+    animation: moveToTop 7s ease-in-out -3.156s infinite;
+  }
+
+  li:nth-child(6) {
+    left: 29px;
+    top: 50%;
+    transform: translate(-50%, -50%);
+    width: 17px;
+    height: 17px;
+    animation: moveToTop 4s ease-in-out -3.452s infinite;
+  }
+
+  li:nth-child(7) {
+    left: 47px;
+    top: 50%;
+    transform: translate(-50%, -50%);
+    width: 24px;
+    height: 24px;
+    animation: moveToTop 5s ease-in-out -4.47s infinite;
+  }
+
+  li:nth-child(8) {
+    left: 39px;
+    top: 50%;
+    transform: translate(-50%, -50%);
+    width: 22px;
+    height: 22px;
+    animation: moveToTop 7s ease-in-out -2.689s infinite;
+  }
+
+  li:nth-child(9) {
+    left: 17px;
+    top: 50%;
+    transform: translate(-50%, -50%);
+    width: 25px;
+    height: 25px;
+    animation: moveToTop 6s ease-in-out -0.064s infinite;
+  }
+
+  li:nth-child(10) {
+    left: 81px;
+    top: 50%;
+    transform: translate(-50%, -50%);
+    width: 18px;
+    height: 18px;
+    animation: moveToTop 9s ease-in-out -2.443s infinite;
+  }
+
+  li:nth-child(11) {
+    left: 54px;
+    top: 50%;
+    transform: translate(-50%, -50%);
+    width: 19px;
+    height: 19px;
+    animation: moveToTop 4s ease-in-out -4.872s infinite;
+  }
+
+  li:nth-child(12) {
+    left: 49px;
+    top: 50%;
+    transform: translate(-50%, -50%);
+    width: 19px;
+    height: 19px;
+    animation: moveToTop 9s ease-in-out -3.822s infinite;
+  }
+
+  li:nth-child(13) {
+    left: 37px;
+    top: 50%;
+    transform: translate(-50%, -50%);
+    width: 29px;
+    height: 29px;
+    animation: moveToTop 4s ease-in-out -0.113s infinite;
+  }
+
+  li:nth-child(14) {
+    left: 27px;
+    top: 50%;
+    transform: translate(-50%, -50%);
+    width: 29px;
+    height: 29px;
+    animation: moveToTop 9s ease-in-out -2.784s infinite;
+  }
+
+  li:nth-child(15) {
+    left: 30px;
+    top: 50%;
+    transform: translate(-50%, -50%);
+    width: 29px;
+    height: 29px;
+    animation: moveToTop 8s ease-in-out -2.557s infinite;
+  }
+
+  @keyframes rotate {
+    50% {
+      border-radius: 45% / 42% 40% 56% 48%;
+    }
+    100% {
+      transform: translate(-50%, -50%) rotate(720deg);
+    }
+  }
+
+  @keyframes moveToTop {
+    90% {
+      opacity: 1;
+    }
+    100% {
+      opacity: .1;
+      transform: translate(-50%, -180px);
+    }
+  }
+
+  @keyframes hueRotate {
+    100% {
+      filter: contrast(15) hue-rotate(360deg);
+    }
+  }
+
+</style>
+</html>
